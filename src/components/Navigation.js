@@ -1,16 +1,19 @@
 import React from "react";
-import data from "../data.json";
 
-const Navigation = () => {
+const Navigation = ({ data, setPlanet }) => {
   return (
-    <nav className="container">
-      <h1 className="title">THE PLANETS</h1>
-      <div id="planet-navs">
+    <nav id="nav-container">
+      <div id="nav-bar"></div>
+      <h2 id="nav-title">THE PLANETS</h2>
+      <div id="nav-planets">
         {data.map(planet => {
           return (
-            <ul className="planet-link" key={planet.name}>
-              <li>{planet.name}</li>
-            </ul>
+            <h4
+              className="nav-planet-link"
+              key={planet.name}
+              onClick={() => setPlanet(planet.name)}>
+              {planet.name}
+            </h4>
           );
         })}
       </div>
