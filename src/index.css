@@ -38,6 +38,7 @@ span {
   height: 1024px;
   width: 1440px;
   background: #070724;
+  background-image: url(./assets/background-stars.svg);
 }
 
 #nav-container {
@@ -90,10 +91,29 @@ span {
   letter-spacing: 1px;
 }
 
+#planet-page-container {
+  position: relative;
+  left: 146.95px;
+  width: 1128.04px;
+  height: 881.99px;
+}
+
+#planet-image-container {
+  position: absolute;
+  top: 66.95px;
+  width: 666.09px;
+  height: 666.09px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 #planet-info-container {
   position: absolute;
-  top: 212px;
-  left: 925px;
+  top: 126px;
+  left: 778.05px;
   width: 350px;
   height: 541px;
 }
@@ -196,11 +216,82 @@ span {
   right: 108px;
 }
 
-button:active {
+.active {
   background: #419ebb;
 }
 
 button:hover {
   background: #d8d8d8;
   opacity: 0.2;
+}
+
+#planet-quick-info-container {
+  position: absolute;
+  width: 1120px;
+  height: 128px;
+  top: 754px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+#rotation-box {
+  position: relative;
+  width: 255px;
+  height: 128px;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+#revolution-box {
+  position: relative;
+  width: 255px;
+  height: 128px;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+#radius-box {
+  position: relative;
+  width: 255px;
+  height: 128px;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+#avg-temp-box {
+  position: relative;
+  width: 255px;
+  height: 128px;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.quick-info-title {
+  position: relative;
+  left: 23px;
+  top: 20px;
+  margin: 0;
+
+  font-family: Spartan;
+  font-weight: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.quick-info-number {
+  position: relative;
+  top: 23px;
+  left: 23px;
+  margin: 0;
+
+  font-family: Antonio;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
 }
