@@ -2,47 +2,77 @@ import React, { useState } from "react";
 
 const PlanetPage = ({ data, planet }) => {
   const [view, setView] = useState("overview");
-  const currentPlanet = data.filter(p => p.name === planet);
+  const [image, setImage] = useState("planet");
+  let currentPlanet = data.filter(p => p.name === planet);
+  currentPlanet = currentPlanet[0];
 
-  const showOverview = () => {
-    setView("overview");
-  };
-
-  const showStructure = () => {
-    setView("structure");
-  };
-
-  const showGeology = () => {
-    setView("geology");
+  const changeContent = (content, image) => {
+    setView(content);
+    setImage(image);
   };
 
   return (
     <>
-      <div id="planet-info-container">
-        <h1 id="current-planet-name">{planet}</h1>
-        <p id="planet-content">{currentPlanet[0][view].content}</p>
-        <p id="planet-link">
-          Source: <a href={currentPlanet[0][view].source}>Wikipedia</a>
-        </p>
-        <div id="button-container">
-          <button
-            id="overview-btn"
-            type="button"
-            onClick={() => showOverview()}>
-            <span id="overview-btn-number">01</span>
-            <span id="overview-btn-text">Overview</span>
-          </button>
-          <button
-            id="structure-btn"
-            type="button"
-            onClick={() => showStructure()}>
-            <span id="structure-btn-number">02</span>
-            <span id="structure-btn-text">Internal Structure</span>
-          </button>
-          <button id="geology-btn" type="button" onClick={() => showGeology()}>
-            <span id="geology-btn-number">03</span>
-            <span id="geology-btn-text">Surface Geology</span>
-          </button>
+      <div id="planet-page-container">
+        <div id="planet-image-container">
+          <img src={currentPlanet.images[image]} alt={planet.name} />
+        </div>
+        <div id="planet-info-container">
+          <h1 id="current-planet-name">{planet}</h1>
+          <p id="planet-content">{currentPlanet[view].content}</p>
+          <p id="planet-link">
+            Source: <a href={currentPlanet[view].source}>Wikipedia</a>
+          </p>
+          <div id="button-container">
+            <button
+              id="overview-btn"
+              type="button"
+              onClick={() => changeContent("overview", "planet")}>
+              <span id="overview-btn-number">01</span>
+              <span id="overview-btn-text">Overview</span>
+            </button>
+            <button
+              id="structure-btn"
+              type="button"
+              onClick={() => changeContent("structure", "internal")}>
+              <span id="structure-btn-number">02</span>
+              <span id="structure-btn-text">Internal Structure</span>
+            </button>
+            <button
+              id="geology-btn"
+              type="button"
+              onClick={() => changeContent("geology", "geology")}>
+              <span id="geology-btn-number">03</span>
+              <span id="geology-btn-text">Surface Geology</span>
+            </button>
+          </div>
+        </div>
+        <div id="planet-quick-info-container">
+          <div id="rotation-box">
+            <span id="rotation-text">
+              <p className="quick-info-title">Rotation Time</p>
+              <p className="quick-info-number">{currentPlanet.rotation}</p>
+            </span>
+          </div>
+          <div id="revolution-box">
+            <span id="revolution-text">
+              <p className="quick-info-title">Revolution Time</p>
+              <p className="quick-info-number">{currentPlanet.revolution}</p>
+            </span>
+          </div>
+
+          <div id="radius-box">
+            <span id="radius-text">
+              <p className="quick-info-title">Radius</p>
+              <p className="quick-info-number">{currentPlanet.radius}</p>
+            </span>
+          </div>
+          <div id="avg-temp-box">
+            <span id="avg-temp-text">
+              <p className="quick-info-title">Average Temp.</p>
+              <p className="quick-info-number">{currentPlanet.temperature}</p>
+            </span>
+          </div>
         </div>
       </div>
     </>
