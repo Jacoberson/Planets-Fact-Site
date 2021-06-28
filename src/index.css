@@ -161,11 +161,11 @@ span {
 }
 
 #geology-image {
-  position: fixed;
+  position: absolute;
   width: 163px;
   height: 199px;
-  bottom: 271px;
-  left: 408px;
+  top: 400px;
+  left: 253px;
   z-index: 2;
 }
 
