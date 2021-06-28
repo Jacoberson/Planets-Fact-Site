@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const PlanetPage = ({ data, planet }) => {
   const [view, setView] = useState("overview");
   const [image, setImage] = useState("planet");
+
   let currentPlanet = data.filter(p => p.name === planet);
   currentPlanet = currentPlanet[0];
 
@@ -26,6 +27,9 @@ const PlanetPage = ({ data, planet }) => {
           <div id="button-container">
             <button
               id="overview-btn"
+              className={
+                view === "overview" ? `${currentPlanet.name}-active btn` : "btn"
+              }
               type="button"
               onClick={() => changeContent("overview", "planet")}>
               <span id="overview-btn-number">01</span>
@@ -33,6 +37,11 @@ const PlanetPage = ({ data, planet }) => {
             </button>
             <button
               id="structure-btn"
+              className={
+                view === "structure"
+                  ? `${currentPlanet.name}-active btn`
+                  : "btn"
+              }
               type="button"
               onClick={() => changeContent("structure", "internal")}>
               <span id="structure-btn-number">02</span>
@@ -40,6 +49,9 @@ const PlanetPage = ({ data, planet }) => {
             </button>
             <button
               id="geology-btn"
+              className={
+                view === "geology" ? `${currentPlanet.name}-active btn` : "btn"
+              }
               type="button"
               onClick={() => changeContent("geology", "geology")}>
               <span id="geology-btn-number">03</span>
@@ -48,30 +60,21 @@ const PlanetPage = ({ data, planet }) => {
           </div>
         </div>
         <div id="planet-quick-info-container">
-          <div id="rotation-box">
-            <span id="rotation-text">
-              <p className="quick-info-title">Rotation Time</p>
-              <p className="quick-info-number">{currentPlanet.rotation}</p>
-            </span>
+          <div className="quick-info-box">
+            <p className="quick-info-title">Rotation Time</p>
+            <p className="quick-info-number">{currentPlanet.rotation}</p>
           </div>
-          <div id="revolution-box">
-            <span id="revolution-text">
-              <p className="quick-info-title">Revolution Time</p>
-              <p className="quick-info-number">{currentPlanet.revolution}</p>
-            </span>
+          <div className="quick-info-box">
+            <p className="quick-info-title">Revolution Time</p>
+            <p className="quick-info-number">{currentPlanet.revolution}</p>
           </div>
-
-          <div id="radius-box">
-            <span id="radius-text">
-              <p className="quick-info-title">Radius</p>
-              <p className="quick-info-number">{currentPlanet.radius}</p>
-            </span>
+          <div className="quick-info-box">
+            <p className="quick-info-title">Radius</p>
+            <p className="quick-info-number">{currentPlanet.radius}</p>
           </div>
-          <div id="avg-temp-box">
-            <span id="avg-temp-text">
-              <p className="quick-info-title">Average Temp.</p>
-              <p className="quick-info-number">{currentPlanet.temperature}</p>
-            </span>
+          <div className="quick-info-box">
+            <p className="quick-info-title">Average Temp.</p>
+            <p className="quick-info-number">{currentPlanet.temperature}</p>
           </div>
         </div>
       </div>

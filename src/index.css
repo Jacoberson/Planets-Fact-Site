@@ -19,8 +19,49 @@ a {
   color: #ffffff;
 }
 
-button {
+.btn:hover {
+  background-color: rgb(216, 216, 216, 0.2);
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px solid #ffffff;
+  background: #070724;
+  box-sizing: border-box;
   text-transform: uppercase;
+  mix-blend-mode: normal;
+}
+
+.Mercury-active {
+  background-color: #419ebb;
+}
+
+.Venus-active {
+  background-color: #eda249;
+}
+
+.Earth-active {
+  background-color: #6d2ed5;
+}
+
+.Mars-active {
+  background-color: #d14c32;
+}
+
+.Jupiter-active {
+  background-color: #d83a34;
+}
+
+.Saturn-active {
+  background-color: #cd5120;
+}
+
+.Uranus-active {
+  background-color: #1ec1a2;
+}
+
+.Neptune-active {
+  background-color: #2d68f0;
 }
 
 span {
@@ -91,6 +132,10 @@ span {
   letter-spacing: 1px;
 }
 
+.nav-planet-link:hover {
+  cursor: pointer;
+}
+
 #planet-page-container {
   position: relative;
   left: 146.95px;
@@ -155,27 +200,22 @@ span {
   position: absolute;
   width: 350px;
   height: 48px;
-  background: #070724;
-  border: 1px solid #ffffff;
-  background: #070724;
-  box-sizing: border-box;
 }
 
 #overview-btn-number,
 #structure-btn-number,
 #geology-btn-number {
   position: absolute;
-  top: 11px;
+  top: 12px;
   left: 28px;
   width: 18px;
   height: 25px;
-
   opacity: 0.5;
 }
 
 #overview-btn-text {
   position: absolute;
-  bottom: 9px;
+  bottom: 8px;
   right: 183px;
   width: 93px;
   height: 25px;
@@ -186,11 +226,6 @@ span {
   top: 64px;
   width: 350px;
   height: 48px;
-  background: #070724;
-
-  border: 1px solid #ffffff;
-  background: #070724;
-  box-sizing: border-box;
 }
 
 #structure-btn-text {
@@ -204,25 +239,12 @@ span {
   top: 128px;
   width: 350px;
   height: 48px;
-  border: 1px solid #ffffff;
-  background: #070724;
-  box-sizing: border-box;
-  /* opacity: 0.2; */
 }
 
 #geology-btn-text {
   position: absolute;
   bottom: 10px;
   right: 108px;
-}
-
-.active {
-  background: #419ebb;
-}
-
-button:hover {
-  background: #d8d8d8;
-  opacity: 0.2;
 }
 
 #planet-quick-info-container {
@@ -234,31 +256,9 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border: 1px solid red; */
 }
 
-#rotation-box {
-  position: relative;
-  width: 255px;
-  height: 128px;
-  border: 1px solid rgb(255, 255, 255, 0.2);
-}
-
-#revolution-box {
-  position: relative;
-  width: 255px;
-  height: 128px;
-  border: 1px solid rgb(255, 255, 255, 0.2);
-}
-
-#radius-box {
-  position: relative;
-  width: 255px;
-  height: 128px;
-  border: 1px solid rgb(255, 255, 255, 0.2);
-}
-
-#avg-temp-box {
+.quick-info-box {
   position: relative;
   width: 255px;
   height: 128px;
