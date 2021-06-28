@@ -16,7 +16,26 @@ const PlanetPage = ({ data, planet }) => {
     <>
       <div id="planet-page-container">
         <div id="planet-image-container">
-          <img src={currentPlanet.images[image]} alt={planet.name} />
+          {view !== "geology" ? (
+            <img
+              id="planet-image"
+              src={currentPlanet.images[image]}
+              alt={planet.name + view}
+            />
+          ) : (
+            <div id="geology-image-container">
+              <img
+                id="geology-planet-image"
+                src={currentPlanet.images["planet"]}
+                alt={planet.name + view}
+              />
+              <img
+                id="geology-image"
+                src={currentPlanet.images[image]}
+                alt={currentPlanet.name + "geology"}
+              />
+            </div>
+          )}
         </div>
         <div id="planet-info-container">
           <h1 id="current-planet-name">{planet}</h1>
