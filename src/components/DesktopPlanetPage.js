@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import sourceIcon from '../images/icon-source.svg';
 
-const PlanetPage = ({ data, planet }) => {
+const DesktopPlanetPage = ({ data, planet }) => {
   const [view, setView] = useState('overview');
   const [image, setImage] = useState('planet');
 
@@ -103,4 +103,4 @@ const PlanetPage = ({ data, planet }) => {
   );
 };
 
-export default PlanetPage;
+export default DesktopPlanetPage;

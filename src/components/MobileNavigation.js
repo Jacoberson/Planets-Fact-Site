@@ -22,10 +22,13 @@ const OpenedMenu = ({ data }) => {
   );
 };
 
-const MobileNavigation = ({ data, setPlanet }) => {
+const MobileNavigation = ({ data, setPlanet, setMenuOpen }) => {
   const [displayMenu, setDisplayMenu] = useState(false);
 
-  const toggleMenu = () => setDisplayMenu(!displayMenu);
+  const toggleMenu = () => {
+    setDisplayMenu(!displayMenu);
+    setMenuOpen(!displayMenu);
+  };
 
   return (
     <nav>
