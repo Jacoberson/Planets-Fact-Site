@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import menuIcon from '../images/icon-hamburger.svg';
+import { ReactComponent as MenuIcon } from '../images/icon-hamburger.svg';
 import chevronIcon from '../images/icon-chevron.svg';
 
 const OpenedMenu = ({ data }) => {
@@ -7,11 +7,16 @@ const OpenedMenu = ({ data }) => {
     <div id="menu-planet-container">
       {data.map(planet => (
         <React.Fragment key={planet.name}>
-          <div key={planet.name} className="planet-menu-row">
-            <h4 className="planet-menu-name">{planet.name}</h4>
+          <div
+            key={planet.name}
+            className="planet-menu-row"
+            onClick={() => console.log(planet.name)}>
+            <div className={`${planet.name}-dot dot`}>
+              <h4 className="planet-menu-name">{planet.name}</h4>
+            </div>
             <img src={chevronIcon} alt="chevron" id="chevron" />
           </div>
-          <div className="divider" />
+          <div className="planet-divider" />
         </React.Fragment>
       ))}
     </div>
@@ -27,27 +32,15 @@ const MobileNavigation = ({ data, setPlanet }) => {
     <nav>
       <div className="above-nav">
         <h2 className="title">THE PLANETS</h2>
-        <img src={menuIcon} alt="menu" onClick={() => toggleMenu()} id="menu" />
+        {displayMenu ? (
+          <MenuIcon id="menu" fill="#FFFFFF3B" onClick={() => toggleMenu()} />
+        ) : (
+          <MenuIcon id="menu" fill="#FFF" onClick={() => toggleMenu()} />
+        )}
       </div>
       <div className="divider" />
       {displayMenu && <OpenedMenu data={data} />}
     </nav>
-    // <nav id="desktop-nav-container">
-    //   <div id="desktop-nav-bar" />
-    //   <h2 id="desktop-nav-title">THE PLANETS</h2>
-    //   <div id="desktop-nav-planets">
-    //     {data.map(planet => {
-    //       return (
-    //         <h4
-    //           className="desktop-nav-planet-link"
-    //           key={planet.name}
-    //           onClick={() => setPlanet(planet.name)}>
-    //           {planet.name}
-    //         </h4>
-    //       );
-    //     })}
-    //   </div>
-    // </nav>
   );
 };
 
