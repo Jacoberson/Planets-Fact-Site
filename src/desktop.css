@@ -76,19 +76,19 @@ span {
 
 #root {
   position: absolute;
-  height: 1024px;
-  width: 1440px;
+  height: 100vh;
+  width: 100vw;
   background: #070724;
-  background-image: url(../src/background-stars.svg);
+  background-image: url(./images/background-stars.svg);
 }
 
-#nav-container {
+#desktop-nav-container {
   position: relative;
   width: 100%;
   height: 85px;
 }
 
-#nav-bar {
+#desktop-nav-bar {
   position: relative;
   top: 85px;
   width: 100%;
@@ -98,7 +98,7 @@ span {
   opacity: 0.2;
 }
 
-#nav-title {
+#desktop-nav-title {
   position: absolute;
   left: 32px;
 
@@ -110,7 +110,7 @@ span {
   letter-spacing: -1.05px;
 }
 
-#nav-planets {
+#desktop-nav-planets {
   position: absolute;
   top: 33px;
   left: 735px;
@@ -123,7 +123,7 @@ span {
   align-items: center;
 }
 
-.nav-planet-link {
+.desktop-nav-planet-link {
   font-family: Spartan;
   font-style: normal;
   font-weight: bold;

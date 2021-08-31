@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import sourceIcon from '../images/icon-source.svg';
 
 const PlanetPage = ({ data, planet }) => {
-  const [view, setView] = useState("overview");
-  const [image, setImage] = useState("planet");
+  const [view, setView] = useState('overview');
+  const [image, setImage] = useState('planet');
 
   let currentPlanet = data.filter(p => p.name === planet);
   currentPlanet = currentPlanet[0];
@@ -16,7 +17,7 @@ const PlanetPage = ({ data, planet }) => {
     <>
       <div id="planet-page-container">
         <div id="planet-image-container">
-          {view !== "geology" ? (
+          {view !== 'geology' ? (
             <img
               id="planet-image"
               src={currentPlanet.images[image]}
@@ -26,13 +27,13 @@ const PlanetPage = ({ data, planet }) => {
             <div id="geology-image-container">
               <img
                 id="geology-planet-image"
-                src={currentPlanet.images["planet"]}
+                src={currentPlanet.images['planet']}
                 alt={planet.name + view}
               />
               <img
                 id="geology-image"
                 src={currentPlanet.images[image]}
-                alt={currentPlanet.name + "geology"}
+                alt={currentPlanet.name + 'geology'}
               />
             </div>
           )}
@@ -41,38 +42,39 @@ const PlanetPage = ({ data, planet }) => {
           <h1 id="current-planet-name">{planet}</h1>
           <p id="planet-content">{currentPlanet[view].content}</p>
           <p id="planet-link">
-            Source: <a href={currentPlanet[view].source}>Wikipedia</a>
+            Source: <a href={currentPlanet[view].source}>Wikipedia</a>{' '}
+            <img src={sourceIcon} alt="arrow icon" />
           </p>
           <div id="button-container">
             <button
               id="overview-btn"
               className={
-                view === "overview" ? `${currentPlanet.name}-active btn` : "btn"
+                view === 'overview' ? `${currentPlanet.name}-active btn` : 'btn'
               }
               type="button"
-              onClick={() => changeContent("overview", "planet")}>
+              onClick={() => changeContent('overview', 'planet')}>
               <span id="overview-btn-number">01</span>
               <span id="overview-btn-text">Overview</span>
             </button>
             <button
               id="structure-btn"
               className={
-                view === "structure"
+                view === 'structure'
                   ? `${currentPlanet.name}-active btn`
-                  : "btn"
+                  : 'btn'
               }
               type="button"
-              onClick={() => changeContent("structure", "internal")}>
+              onClick={() => changeContent('structure', 'internal')}>
               <span id="structure-btn-number">02</span>
               <span id="structure-btn-text">Internal Structure</span>
             </button>
             <button
               id="geology-btn"
               className={
-                view === "geology" ? `${currentPlanet.name}-active btn` : "btn"
+                view === 'geology' ? `${currentPlanet.name}-active btn` : 'btn'
               }
               type="button"
-              onClick={() => changeContent("geology", "geology")}>
+              onClick={() => changeContent('geology', 'geology')}>
               <span id="geology-btn-number">03</span>
               <span id="geology-btn-text">Surface Geology</span>
             </button>
