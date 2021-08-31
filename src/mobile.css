@@ -33,20 +33,20 @@
 #menu-planet-container {
   position: relative;
   display: flex;
-  flex-flow: column wrap;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
   top: 24px;
+  height: 80vh;
 }
 
 .planet-menu-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  flex: 1 2 auto;
+  height: 10%;
 }
 
 .planet-menu-name {
@@ -55,19 +55,16 @@
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 1.36px;
-  left: 69px;
+  left: 25px;
 }
 
 #chevron {
-  margin-right: 32px;
+  position: absolute;
+  right: 10%;
 }
 
 .dot {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   margin-left: 24px;
-  align-self: center;
 }
 
 .Mercury-dot {
@@ -127,7 +124,7 @@
 }
 
 .planet-divider {
-  margin: 20px;
+  /* margin: 20px; */
   position: relative;
   left: 5px;
   width: 90%;

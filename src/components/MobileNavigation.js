@@ -11,10 +11,9 @@ const OpenedMenu = ({ data }) => {
             key={planet.name}
             className="planet-menu-row"
             onClick={() => console.log(planet.name)}>
-            <div className={`${planet.name}-dot dot`}>
-              <h4 className="planet-menu-name">{planet.name}</h4>
-            </div>
+            <div className={`${planet.name}-dot dot`} />
             <img src={chevronIcon} alt="chevron" id="chevron" />
+            <h4 className="planet-menu-name">{planet.name}</h4>
           </div>
           <div className="planet-divider" />
         </React.Fragment>
